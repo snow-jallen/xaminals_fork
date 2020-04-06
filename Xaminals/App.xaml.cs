@@ -1,4 +1,11 @@
-﻿using Xamarin.Forms;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Reflection;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
@@ -9,7 +16,7 @@ namespace Xaminals
         public App()
         {
             InitializeComponent();
-
+            Startup.Init();
             MainPage = new AppShell();
         }
 

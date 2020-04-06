@@ -31,10 +31,14 @@
                                       Animals="{x:Static data:CatData.Cats}"
                                       SelectedItemNavigationTarget="{x:Type views:CatDetailPage}" />
     </Shell.SearchHandler>
-    
-    <CollectionView Margin="20"
+
+    <StackLayout>
+        <Button Command="{Binding DoItCommand}" Text="Click this!" />
+        <Label Text="{Binding MyText, FallbackValue='Fallback Value', TargetNullValue='Target Null Value'}" />
+        <CollectionView Margin="20"
                     ItemsSource="{x:Static data:CatData.Cats}"
                     ItemTemplate="{StaticResource AnimalTemplate}"
                     SelectionMode="Single"
-                    SelectionChanged="OnCollectionViewSelectionChanged" />      
+                    SelectionChanged="OnCollectionViewSelectionChanged" />
+    </StackLayout>
 </ContentPage>

@@ -9,6 +9,7 @@ namespace Xaminals.Views
         public CatsPage()
         {
             InitializeComponent();
+            BindingContext = Startup.ServiceProvider.GetService(typeof(Startup.MyViewModel));
         }
 
         async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
